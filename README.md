@@ -56,6 +56,13 @@ A token will be displayed in the output. Please save this token for futher use. 
         "detail": "Authentication credentials were not provided."
     }
 
+### IMPORTANT
+
+1. HE ACTUAL DELIVERY DATE OF THE PRODUCTS IS ASSUMED TO BE A WEEK FROM THE ORDER DATE since it wasn't explicitly stated in the assingment
+2. Please ensure to read the documentation carefully before using any API endpoints.
+3. For more input data structures, please refer to `docs.md`.
+4. Feedback and contributions are welcome. Feel free to submit any issues if you encounter any problems. (samyuktab22@gmail.com)
+
 ## API Endpoints: Vendor Profile Management
 
 ### List All Vendors and Create New Vendor `GET | POST`
@@ -334,7 +341,7 @@ The following error response is returned when a resource `(Vendor, Purchase orde
 
 The HistoricalPerformance model stores historical data on vendor performance, allowing for trend analysis. It can be viewed using `select * from performance`. This model stores records of vendors evertime there is a change in the metrics. 
 
-### Database Queries (in case you want to restart)
+## Database Queries (in case you want to restart)
 
     DELETE FROM orders;
     DELETE FROM performance;
@@ -344,9 +351,11 @@ The HistoricalPerformance model stores historical data on vendor performance, al
     ALTER TABLE orders AUTO_INCREMENT = 1;
     ALTER TABLE performance AUTO_INCREMENT = 1;
 
-### Important Notes
-```json
-- THE ACTUAL DELIVERY DATE OF THE PRODUCTS IS ASSUMED TO BE A WEEK FROM THE ORDER DATE since it wasn't explicitly stated in the assingment
-- Please ensure to read the documentation carefully before using any API endpoints.
-- Feedback and contributions are welcome. Feel free to submit any issues if you encounter any problems. 
-```
+## Test Suites
+
+To run the test suites, enter the following commands to the terminal:
+
+    python manage.py test myapp.tests.test_serialiser
+    python manage.py test myapp.tests.test_views
+    python manage.py test myapp.tests.test_models
+    
